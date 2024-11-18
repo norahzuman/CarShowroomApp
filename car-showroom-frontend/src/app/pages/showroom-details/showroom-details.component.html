@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <app-back-button></app-back-button>
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="mb-0">Showroom Details</h2>
+        </div>
+        <div class="card-body bg-light">
+            <div *ngIf="showroomDetails; else noDetails">
+                <p><strong>Name:</strong> {{ showroomDetails.name }}</p>
+                <p><strong>Commercial Registration Number:</strong> {{ showroomDetails.commercialRegistrationNumber }}</p>
+                <p><strong>Manager Name:</strong> {{ showroomDetails.managerName }}</p>
+                <p><strong>Contact Number:</strong> {{ showroomDetails.contactNumber }}</p>
+                <p><strong>Address:</strong> {{ showroomDetails.address }}</p>
+            </div>
+            <ng-template #noDetails>
+                <p class="text-center text-muted">No details available for this showroom.</p>
+            </ng-template>
+        </div>
+        <div class="card-footer text-center">
+            <button class="btn btn-secondary" routerLink="/showrooms">Back to Showrooms</button>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,54 @@
+.car-list {
+    font-family: 'Roboto', Arial, sans-serif;
+}
+
+.card-header {
+    background-color: #563d7c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.list-group-item {
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.list-group-item h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.list-group-item p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.badge {
+    font-size: 1rem;
+    padding: 10px 15px;
+}
+
+.card-footer {
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-secondary {
+    border-radius: 20px;
+}
+
+.btn-secondary:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+

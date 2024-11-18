@@ -1,0 +1,64 @@
+<div class="container mt-5">
+  <app-back-button></app-back-button>
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white text-center">
+      <h3 class="mb-0">{{ isEditMode ? 'Edit Showroom' : 'Add New Showroom' }}</h3>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="showroomForm" (ngSubmit)="submitForm()">
+        <!-- Name -->
+        <div class="row mb-3">
+          <label for="name" class="col-md-3 col-form-label ">Name</label>
+          <div class="col-md-8">
+            <input id="name" formControlName="name" type="text" class="form-control"
+                   [class.form-control-disabled]="isEditMode"
+                   [readonly]="isEditMode" /> <!-- Disable in edit mode -->
+          </div>
+        </div>
+
+        <!-- Commercial Registration Number -->
+        <div class="row mb-3">
+          <label for="commercialRegistrationNumber" class="col-md-4 col-form-label ">Commercial Registration Number</label>
+          <div class="col-md-8">
+            <input id="commercialRegistrationNumber" formControlName="commercialRegistrationNumber" type="text" class="form-control"
+                   [class.form-control-disabled]="isEditMode"
+                   [readonly]="isEditMode" /> <!-- Disable in edit mode -->
+          </div>
+        </div>
+
+        <!-- Contact Number -->
+        <div class="row mb-3">
+          <label for="contactNumber" class="col-md-4 col-form-label ">Contact Number</label>
+          <div class="col-md-8">
+            <input id="contactNumber" formControlName="contactNumber" type="text" class="form-control" />
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="row mb-3">
+          <label for="address" class="col-md-4 col-form-label ">Address</label>
+          <div class="col-md-8">
+            <textarea id="address" formControlName="address" class="form-control"></textarea>
+          </div>
+        </div>
+
+        <!-- Manager Name -->
+        <div class="row mb-3">
+          <label for="managerName" class="col-md-4 col-form-label ">Manager Name</label>
+          <div class="col-md-8">
+            <input id="managerName" formControlName="managerName" type="text" class="form-control" />
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary" [disabled]="showroomForm.invalid">
+            {{ isEditMode ? 'Update' : 'Create' }}
+          </button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

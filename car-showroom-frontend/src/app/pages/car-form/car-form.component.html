@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <app-back-button></app-back-button>
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2 class="mb-0">Add Car to {{ showroomName }}</h2>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="addCarForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    <label for="vin" class="form-label">VIN</label>
+                    <input id="vin" formControlName="vin" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="maker" class="form-label">Maker</label>
+                    <input id="maker" formControlName="maker" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="model" class="form-label">Model</label>
+                    <input id="model" formControlName="model" type="text" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="modelYear" class="form-label">Model Year</label>
+                    <input id="modelYear" formControlName="modelYear" type="number" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input id="price" formControlName="price" type="number" class="form-control" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" [disabled]="addCarForm.invalid">
+                        Add Car
+                    </button>
+                    <button type="button" class="btn btn-secondary" routerLink="/showroom-cars" [queryParams]="{ showroomId: showroomId, showroomName: showroomName }">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    background: #563d7c;
+}
+
+.card-body {
+    font-size: 0.95rem;
+}
+
+.list-group-item {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.list-group-item h6 {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #563d7c;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #c82333;
+    color: #fff;
+}
+
+.card-footer {
+    font-size: 0.9rem;
+}

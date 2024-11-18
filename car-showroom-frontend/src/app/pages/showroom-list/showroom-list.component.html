@@ -1,0 +1,96 @@
+<div class="container mt-5">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h3 class="mb-0">Showroom List</h3>
+        <button *ngIf="isAdmin" class="btn btn-light btn-sm" (click)="addShowroom()">
+          <i class="fas fa-plus-circle"></i> Add Showroom
+        </button>
+      </div>
+
+      <div class="card-body bg-light">
+        <!-- Search Input -->
+        <div class="mb-4">
+          <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search by name, contact, or registration number"
+                  [(ngModel)]="searchQuery"
+                  (ngModelChange)="filterShowrooms()"
+          />
+        </div>
+
+      <div class="card-body bg-light">
+        <h5 class="mb-4">Showrooms</h5>
+
+        <!-- No Showrooms -->
+        <div *ngIf="showrooms.length === 0" class="text-center py-4">
+          <p class="text-muted">No showrooms available. Add a showroom to get started!</p>
+        </div>
+
+        <!-- Showroom Cards -->
+        <div class="list-group">
+          <div
+                  *ngFor="let showroom of showrooms"
+                  class="list-group-item list-group-item-action mb-3 shadow-sm rounded"
+          >
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="text-primary mb-1">{{ showroom.name }}</h6>
+                <p class="mb-0">
+                  <strong>Contact:</strong> {{ showroom.contactNumber }} <br />
+                  <strong>Commercial Reg.:</strong>
+                  {{ showroom.commercialRegistrationNumber }}
+                </p>
+              </div>
+              <button
+                      class="btn btn-sm btn-info me-2"
+                      (click)="viewDetails(showroom.id)"
+              >
+                <i class="fas fa-info-circle"></i> Details
+              </button>
+              <div>
+                <button *ngIf="isAdmin"
+                        class="btn btn-sm btn-outline-primary me-2"
+                        (click)="editShowroom(showroom.id)"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </button>
+                <button *ngIf="isAdmin"
+                        class="btn btn-sm btn-outline-danger me-2"
+                        (click)="deleteShowroom(showroom.id)"
+                >
+                  <i class="fas fa-trash-alt"></i> Delete
+                </button>
+                <button
+                        class="btn btn-sm btn-primary"
+                        (click)="viewCars(showroom.id, showroom.name, showroom.contactNumber)"
+                >
+                  View Cars
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer bg-white d-flex justify-content-between align-items-center">
+        <!-- Pagination -->
+        <button
+                class="btn btn-secondary btn-sm"
+                [disabled]="page === 0"
+                (click)="prevPage()"
+        >
+          <i class="fas fa-chevron-left"></i> Previous
+        </button>
+        <span>Page {{ page + 1 }} of {{ totalPages }}</span>
+        <button
+                class="btn btn-secondary btn-sm"
+                [disabled]="page >= totalPages - 1"
+                (click)="nextPage()"
+        >
+          Next <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    background: #563d7c;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-body {
+    font-size: 1rem;
+    padding: 2rem;
+}
+
+.text-success {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.text-danger {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.btn-outline-primary:hover {
+    background-color: #563d7c;
+    color: #fff;
+}

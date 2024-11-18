@@ -1,0 +1,38 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.card-header {
+    font-size: 1.5rem;
+    background: #563d7c;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-body {
+    font-size: 1rem;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    font-size: 0.85rem;
+    color: #dc3545;
+}
+
+.text-danger {
+    font-size: 0.95rem;
+}
